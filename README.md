@@ -18,6 +18,6 @@ This will open or create a database named `sample` at **(localdb)\mssqllocaldb**
 
 [GetConnection(string databaseName, IEnumerable\<IfNotExistsStatement\> ifNotExistStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15)
 
-[SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null)[https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L37]
+[SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L37)
 
 [TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L61)
