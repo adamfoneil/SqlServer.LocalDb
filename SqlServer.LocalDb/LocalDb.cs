@@ -48,7 +48,15 @@ namespace SqlServer.LocalDb
                 string connectionString = GetConnectionString(databaseName);
                 var result = new SqlConnection(connectionString);
                 result.Open();
-                initialize?.Invoke(result);
+                try
+                {
+                    initialize?.Invoke(result);
+                }
+                catch (Exception exc)
+                {
+                    throw new Exception($"Initialization error: {exc.Message}");
+                }
+                
                 return result;
             }
             catch
