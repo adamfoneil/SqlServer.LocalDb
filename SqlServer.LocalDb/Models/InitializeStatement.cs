@@ -5,6 +5,8 @@
     /// </summary>
     public class InitializeStatement
     {
+        private const string objectNameToken = "%obj%";
+
         public InitializeStatement(string objectName, string dropStatement, string createStatement)
         {
             ObjectName = objectName;
@@ -18,13 +20,17 @@
         public string ObjectName { get; set; }
 
         /// <summary>
-        /// statement to run if object exists
+        /// statement to run if object exists (use %obj% within the statement to insert object name dynamically)
         /// </summary>
         public string DropStatement { get; set; }
 
         /// <summary>
-        /// command to execute if object doesn't exist
+        /// command create the object (use %obj% within the statement to insert object name dynamically)
         /// </summary>
         public string CreateStatement { get; set; }
+
+        public string ResolveDropStatement() => DropStatement.Replace(objectNameToken, ObjectName);
+
+        public string ResoveCreateStatement() => CreateStatement.Replace(objectNameToken, ObjectName);
     }
 }

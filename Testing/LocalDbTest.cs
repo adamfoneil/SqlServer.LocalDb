@@ -28,8 +28,8 @@ namespace Testing
             using (var cn = LocalDb.GetConnection("hello", new InitializeStatement[]
             {
                 new InitializeStatement("dbo.Table1", 
-                "DROP TABLE [dbo].[Table1]",
-                @"CREATE TABLE [dbo].[Table1] (
+                "DROP TABLE %obj%",
+                @"CREATE TABLE %obj% (
                     [Field1] nvarchar(50) NOT NULL,
                     [Field2] nvarchar(50) NOT NULL,
                     [Field3] datetime NULL,

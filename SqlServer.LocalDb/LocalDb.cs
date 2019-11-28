@@ -26,10 +26,10 @@ namespace SqlServer.LocalDb
             {
                 if (ObjectExists(cn, statement.ObjectName))
                 {
-                    Execute(cn, statement.DropStatement);                    
+                    Execute(cn, statement.ResolveDropStatement());
                 }
 
-                Execute(cn, statement.CreateStatement);
+                Execute(cn, statement.ResoveCreateStatement());
             }
         }
 
