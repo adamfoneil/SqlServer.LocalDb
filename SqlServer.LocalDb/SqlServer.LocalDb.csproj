@@ -10,9 +10,10 @@
     <PackageId>SqlServer.LocalDb.Testing</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>A small library to help you write integration tests for SQL Server using LocalDb</Description>
-    <PackageProjectUrl />
+    <PackageProjectUrl>https://github.com/adamosoftware/SqlServer.LocalDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
