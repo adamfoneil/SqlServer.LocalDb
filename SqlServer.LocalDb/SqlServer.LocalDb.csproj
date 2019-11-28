@@ -3,10 +3,27 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>SqlServer.LocalDb</RootNamespace>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Adam O'Neil</Authors>
+    <Product>SqlServer.LocalDb.Testing</Product>
+    <PackageId>SqlServer.LocalDb.Testing</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Description>A small library to help you write integration tests for SQL Server using LocalDb</Description>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
+    <PackageTags>sqlserver localdb</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
