@@ -14,10 +14,12 @@ This will open or create a database named `sample` at **(localdb)\mssqllocaldb**
 
 ## Reference
 
-[LocalDbConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
+[string LocalDbConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
 
-[GetConnection(string databaseName, IEnumerable\<IfNotExistsStatement\> ifNotExistStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15)
+[SqlConnection GetConnection(string databaseName, IEnumerable\<IfNotExistsStatement\> ifNotExistStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15)
 
 [SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L37)
 
-[TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L61)
+[bool TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L61)
+
+[bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L115)
