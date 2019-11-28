@@ -12,7 +12,7 @@ using (var cn = LocalDb.GetConnection("sample"))
 ```
 This will open or create a database named `sample` at **(localdb)\mssqllocaldb**
 
-I didn't try too hard to implement deletion of sample databases because I have found that to be pretty fussy. I figure if you are running tests in an environment like AppVeyor, then you get a clean environment with every build. So, I felt that deleting databases as a cleanup activity was just not necessary.
+I didn't try too hard to implement deletion of sample databases because I have found deleting databases at runtime to be pretty fussy. I figure if you are running tests in an environment like AppVeyor, then you get a clean environment with every build. So, I felt that deleting databases as a cleanup activity was just not necessary.
 
 I looked around and saw a couple other libraries doing exactly what I set out to do here, which was interesting to see. Maybe I should've looked around before writing mine, but I enjoy stuff like this -- so here we are!
 
