@@ -7,30 +7,37 @@ namespace SqlServer.LocalDb
 {
     public static class LocalDb
     {
-        public static string LocalDbConnectionString(string databaseName)
+        public static string GetConnectionString(string databaseName)
         {
             return $"Server=(localdb)\\mssqllocaldb;Database={databaseName};Integrated Security=true";
         }
 
-        public static SqlConnection GetConnection(string databaseName, IEnumerable<IfNotExistsStatement> ifNotExistStatements)
+        public static SqlConnection GetConnection(string databaseName, IEnumerable<InitializeStatement> initializeStatements)
         {
             return GetConnection(databaseName, (cn) =>
             {
-                ExecuteIfNotExistStatements(cn, ifNotExistStatements);
+                ExecuteInitializeStatements(cn, initializeStatements);
             });
         }
 
-        private static void ExecuteIfNotExistStatements(SqlConnection cn, IEnumerable<IfNotExistsStatement> ifNotExistStatements)
+        private static void ExecuteInitializeStatements(SqlConnection cn, IEnumerable<InitializeStatement> statements)
         {
-            foreach (var statement in ifNotExistStatements)
+            foreach (var statement in statements)
             {
-                if (!ObjectExists(cn, statement.ObjectName))
+                if (ObjectExists(cn, statement.ObjectName))
                 {
-                    using (var cmd = new SqlCommand(statement.CommandText, cn))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
+                    Execute(cn, statement.DropStatement);                    
                 }
+
+                Execute(cn, statement.CreateStatement);
+            }
+        }
+
+        private static void Execute(SqlConnection cn, string statement)
+        {
+            using (var cmd = new SqlCommand(statement, cn))
+            {
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -38,7 +45,7 @@ namespace SqlServer.LocalDb
         {
             try
             {
-                string connectionString = LocalDbConnectionString(databaseName);
+                string connectionString = GetConnectionString(databaseName);
                 var result = new SqlConnection(connectionString);
                 result.Open();
                 initialize?.Invoke(result);
@@ -62,7 +69,7 @@ namespace SqlServer.LocalDb
         {
             try
             {
-                using (var cn = new SqlConnection(LocalDbConnectionString("master")))
+                using (var cn = new SqlConnection(GetConnectionString("master")))
                 {
                     using (var cmd = new SqlCommand($"DROP DATABASE [{databaseName}]", cn))
                     {
@@ -83,7 +90,7 @@ namespace SqlServer.LocalDb
         {
             try
             {
-                using (var cn = new SqlConnection(LocalDbConnectionString("master")))
+                using (var cn = new SqlConnection(GetConnectionString("master")))
                 {
                     cn.Open();
                     if (!DatabaseExists(cn, databaseName))

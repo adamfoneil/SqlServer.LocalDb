@@ -25,9 +25,10 @@ namespace Testing
         {
             LocalDb.TryDropDatabase("hello", out _);
 
-            using (var cn = LocalDb.GetConnection("hello", new IfNotExistsStatement[]
+            using (var cn = LocalDb.GetConnection("hello", new InitializeStatement[]
             {
-                new IfNotExistsStatement("dbo.Table1", 
+                new InitializeStatement("dbo.Table1", 
+                "DROP TABLE [dbo].[Table1]",
                 @"CREATE TABLE [dbo].[Table1] (
                     [Field1] nvarchar(50) NOT NULL,
                     [Field2] nvarchar(50) NOT NULL,
