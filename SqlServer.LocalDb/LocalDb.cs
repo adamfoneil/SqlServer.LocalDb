@@ -63,6 +63,9 @@ namespace SqlServer.LocalDb
             }
             catch (InitializationException)
             {
+                // we can't do anything with an initialization error, but
+                // I want to catch this to prevent a database creation attempt,
+                // since at this point we know the db exists
                 throw;
             }
             catch (Exception)
