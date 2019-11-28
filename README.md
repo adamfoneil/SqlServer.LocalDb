@@ -19,12 +19,12 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 ## Reference
 All of these are static methods of the `LocalDb` object:
 
-[string GetConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
+[string GetConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L11)
 
-[SqlConnection GetConnection(string databaseName, IEnumerable\<InitializeStatement\> initializeStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15) See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
+[SqlConnection GetConnection(string databaseName, IEnumerable\<InitializeStatement\> initializeStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L16) See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
 
-[SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L37)
+[SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L45)
 
-[bool TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L61)
+[bool TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L82)
 
-[bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L115)
+[bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L136)
