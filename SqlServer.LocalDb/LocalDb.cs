@@ -147,10 +147,7 @@ namespace SqlServer.LocalDb
         {
             if (ObjectExists(connection, objectName))
             {
-                using (var cmd = new SqlCommand(execute, connection))
-                {
-                    cmd.ExecuteNonQuery();
-                }
+                Execute(connection, execute);
             }
         }
     }
