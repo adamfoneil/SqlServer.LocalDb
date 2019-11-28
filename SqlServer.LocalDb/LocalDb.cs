@@ -85,12 +85,9 @@ namespace SqlServer.LocalDb
             {
                 using (var cn = new SqlConnection(GetConnectionString("master")))
                 {
-                    using (var cmd = new SqlCommand($"DROP DATABASE [{databaseName}]", cn))
-                    {
-                        cmd.ExecuteNonQuery();
-                        message = null;
-                        return true;
-                    }
+                    Execute(cn, $"DROP DATABASE [{databaseName}]");                    
+                    message = null;
+                    return true;                    
                 }
             }
             catch (Exception exc)
@@ -109,10 +106,7 @@ namespace SqlServer.LocalDb
                     cn.Open();
                     if (!DatabaseExists(cn, databaseName))
                     {
-                        using (var cmd = new SqlCommand($"CREATE DATABASE [{databaseName}]", cn))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
+                        Execute(cn, $"CREATE DATABASE [{databaseName}]");
                     }
                     return true;
                 }
