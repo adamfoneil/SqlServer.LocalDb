@@ -44,7 +44,7 @@ namespace SqlServer.LocalDb
                 initialize?.Invoke(result);
                 return result;
             }
-            catch 
+            catch
             {
                 if (TryCreateDbIfNotExists(databaseName))
                 {
@@ -70,7 +70,7 @@ namespace SqlServer.LocalDb
                         message = null;
                         return true;
                     }
-                }                
+                }
             }
             catch (Exception exc)
             {
@@ -96,7 +96,7 @@ namespace SqlServer.LocalDb
                     return true;
                 }
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -122,9 +122,20 @@ namespace SqlServer.LocalDb
                     return !result?.Equals(DBNull.Value) ?? false;
                 }
             }
-            catch 
+            catch
             {
                 return false;
+            }
+        }
+
+        public static void ExecuteIfExists(SqlConnection connection, string objectName, string execute)
+        {
+            if (ObjectExists(connection, objectName))
+            {
+                using (var cmd = new SqlCommand(execute, connection))
+                {
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }
