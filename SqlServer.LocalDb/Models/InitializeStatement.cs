@@ -5,6 +5,9 @@
     /// </summary>
     public class InitializeStatement
     {
+        /// <summary>
+        /// Use this literal in your Drop and Create statements to ensure you use the spelling of your object name from the ObjectName property
+        /// </summary>
         private const string objectNameToken = "%obj%";
 
         public InitializeStatement(string objectName, string dropStatement, string createStatement)
