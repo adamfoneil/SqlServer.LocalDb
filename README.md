@@ -17,6 +17,7 @@ I didn't try too hard to implement deletion of sample databases because I have f
 I looked around and saw a couple other libraries doing exactly what I set out to do here, which was interesting to see. Maybe I should've looked around before writing mine, but I enjoy stuff like this -- so here we are!
 
 ## Reference
+All of these are static methods of the `LocalDb` object:
 
 [string LocalDbConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
 
