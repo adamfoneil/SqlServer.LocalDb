@@ -25,8 +25,8 @@ All of these are static methods of the `LocalDb` object:
 
 [SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L45)
 
-[bool TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L82)
+[bool TryDropDatabase(string databaseName, out string message)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L85)
 
-[bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L130)
+[bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L133)
 
-[void ExecuteIfExists(SqlConnection connection, string objectName, string execute)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L146)
+[void ExecuteIfExists(SqlConnection connection, string objectName, string execute)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L149)
