@@ -1,4 +1,5 @@
-﻿using SqlServer.LocalDb.Models;
+﻿using SqlServer.LocalDb.Exceptions;
+using SqlServer.LocalDb.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -48,18 +49,23 @@ namespace SqlServer.LocalDb
                 string connectionString = GetConnectionString(databaseName);
                 var result = new SqlConnection(connectionString);
                 result.Open();
+
                 try
                 {
                     initialize?.Invoke(result);
                 }
                 catch (Exception exc)
                 {
-                    throw new Exception($"Initialization error: {exc.Message}");
+                    throw new InitializationException($"Initialization error: {exc.Message}");
                 }
                 
                 return result;
             }
-            catch
+            catch (InitializationException)
+            {
+                throw;
+            }
+            catch (Exception)
             {
                 if (TryCreateDbIfNotExists(databaseName))
                 {
