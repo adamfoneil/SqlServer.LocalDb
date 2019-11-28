@@ -19,9 +19,9 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 ## Reference
 All of these are static methods of the `LocalDb` object:
 
-[string LocalDbConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
+[string GetConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L10)
 
-[SqlConnection GetConnection(string databaseName, IEnumerable\<IfNotExistsStatement\> ifNotExistStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15) See also [IfNotExistsStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/IfNotExistsStatement.cs)
+[SqlConnection GetConnection(string databaseName, IEnumerable\<InitializeStatement\> initializeStatements)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15) See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
 
 [SqlConnection GetConnection(string databaseName, Action\<SqlConnection\> initialize = null)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L37)
 
