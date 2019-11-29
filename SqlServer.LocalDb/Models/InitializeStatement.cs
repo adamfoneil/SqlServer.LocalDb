@@ -10,6 +10,12 @@
         /// </summary>
         private const string objectNameToken = "%obj%";
 
+        public InitializeStatement(string objectName, string createStatement)
+        {
+            ObjectName = objectName;
+            CreateStatement = createStatement;
+        }
+
         public InitializeStatement(string objectName, string dropStatement, string createStatement)
         {
             ObjectName = objectName;
