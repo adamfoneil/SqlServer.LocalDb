@@ -30,3 +30,6 @@ All of these are static methods of the `LocalDb` object:
 [bool ObjectExists(SqlConnection connection, string objectName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L133)
 
 [void ExecuteIfExists(SqlConnection connection, string objectName, string execute)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L149)
+
+## Hi there
+If by a crazy turn of events, you find this useful, please consider [buying me a coffee](https://paypal.me/adamosoftware).
