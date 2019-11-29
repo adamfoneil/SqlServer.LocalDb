@@ -23,7 +23,8 @@
         public string ObjectName { get; set; }
 
         /// <summary>
-        /// statement to run if object exists (use %obj% within the statement to insert object name dynamically)
+        /// statement to run if object exists (use %obj% within the statement to insert object name dynamically).
+        /// Leave null if yo don't want to drop the object during initialization
         /// </summary>
         public string DropStatement { get; set; }
 
@@ -31,6 +32,8 @@
         /// command create the object (use %obj% within the statement to insert object name dynamically)
         /// </summary>
         public string CreateStatement { get; set; }
+
+        public bool WillDropObject => !string.IsNullOrEmpty(DropStatement);
 
         public string ResolveDropStatement() => DropStatement.Replace(objectNameToken, ObjectName);
 

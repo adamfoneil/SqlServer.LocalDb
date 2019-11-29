@@ -25,12 +25,18 @@ namespace SqlServer.LocalDb
         {
             foreach (var statement in statements)
             {
-                if (ObjectExists(cn, statement.ObjectName))
+                bool exists = ObjectExists(cn, statement.ObjectName);
+                
+                if (statement.WillDropObject && exists)
                 {
                     Execute(cn, statement.ResolveDropStatement());
-                }
+                    exists = false;
+                }                
 
-                Execute(cn, statement.ResoveCreateStatement());
+                if (!exists)
+                {
+                    Execute(cn, statement.ResoveCreateStatement());
+                }                
             }
         }
 
