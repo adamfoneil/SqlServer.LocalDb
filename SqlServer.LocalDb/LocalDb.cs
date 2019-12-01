@@ -21,7 +21,7 @@ namespace SqlServer.LocalDb
             });
         }
 
-        private static void ExecuteInitializeStatements(SqlConnection cn, IEnumerable<InitializeStatement> statements)
+        public static void ExecuteInitializeStatements(SqlConnection cn, IEnumerable<InitializeStatement> statements)
         {
             foreach (var statement in statements)
             {

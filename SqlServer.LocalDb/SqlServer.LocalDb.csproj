@@ -13,10 +13,10 @@
     <PackageProjectUrl>https://github.com/adamosoftware/SqlServer.LocalDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
-    <Version>1.0.7</Version>
-    <AssemblyVersion>1.0.7.0</AssemblyVersion>
-    <FileVersion>1.0.7.0</FileVersion>
-    <PackageReleaseNotes>Refinements to initialization functionality</PackageReleaseNotes>
+    <Version>1.0.8</Version>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <FileVersion>1.0.8.0</FileVersion>
+    <PackageReleaseNotes>Made ExecuteInitializeStatements public</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
