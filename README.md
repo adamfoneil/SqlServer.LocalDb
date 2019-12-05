@@ -21,9 +21,9 @@ All of these are static methods of the `LocalDb` object:
 
 [string GetConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L11)
 
-[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L16)`(string databaseName, IEnumerable\<InitializeStatement\> initializeStatements)` See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
+[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L16)`(string databaseName, IEnumerable<InitializeStatement> initializeStatements)` See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
 
-[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L51)`(string databaseName, Action\<SqlConnection\> initialize = null)`
+[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L51)`(string databaseName, Action<SqlConnection> initialize = null)`
 
 [bool TryDropDatabase](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L91)`(string databaseName, out string message)`
 
