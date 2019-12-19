@@ -3,6 +3,8 @@ using SqlServer.LocalDb.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Threading;
 
 namespace SqlServer.LocalDb
 {
@@ -75,9 +77,10 @@ namespace SqlServer.LocalDb
                 throw;
             }
             catch (Exception)
-            {
+            {                
                 if (TryCreateDbIfNotExists(databaseName))
                 {
+                    Thread.Sleep(500);
                     return GetConnection(databaseName, initialize);
                 }
                 else
@@ -94,6 +97,7 @@ namespace SqlServer.LocalDb
             {
                 using (var cn = new SqlConnection(GetConnectionString("master")))
                 {
+                    cn.Open();                    
                     Execute(cn, $"DROP DATABASE [{databaseName}]");                    
                     message = null;
                     return true;                    
