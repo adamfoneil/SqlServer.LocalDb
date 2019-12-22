@@ -21,7 +21,7 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 - [Drop sample db on test class startup](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L25)
 - [Another test class initialize example](https://github.com/adamosoftware/Dapper.CX/blob/master/Tests/SqlServer/SqlServerIntegration.cs#L17)
 - [Yet another test class initialize, with random data](https://github.com/adamosoftware/Dapper.QX/blob/master/Testing/ExecutionSqlServer.cs#L25), using my [Test Data Generation](https://github.com/adamosoftware/TestDataGen) library.
-- Random data persistence is handled by my [BulkInsert](https://github.com/adamosoftware/SqlIntegration/blob/master/SqlIntegration.Library/BulkInsert.cs) helper from my [SqlIntegration](https://github.com/adamosoftware/SqlIntegration) project.
+- Side note: Random data persistence is handled by my [BulkInsert](https://github.com/adamosoftware/SqlIntegration/blob/master/SqlIntegration.Library/BulkInsert.cs) helper from my [SqlIntegration](https://github.com/adamosoftware/SqlIntegration) project.
 
 ## Reference
 All of these are static methods of the `LocalDb` object:
