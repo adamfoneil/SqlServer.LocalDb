@@ -16,6 +16,12 @@ I didn't try too hard to implement deletion of sample databases because I have f
 
 I looked around and saw a couple other libraries doing exactly what I set out to do here, which was interesting to see. Maybe I should've looked around before writing mine, but I enjoy stuff like this -- so here we are!
 
+## Examples
+- [Create database with sample model](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L43), sample model is [here](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L103)
+- [Drop sample db on test class startup](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L25)
+- [Another test class initialize example](https://github.com/adamosoftware/Dapper.CX/blob/master/Tests/SqlServer/SqlServerIntegration.cs#L17)
+- [Yet another test class initialize, with random data](https://github.com/adamosoftware/Dapper.QX/blob/master/Testing/ExecutionSqlServer.cs#L25), using my [Test Data Generation](https://github.com/adamosoftware/TestDataGen) library.
+
 ## Reference
 All of these are static methods of the `LocalDb` object:
 
