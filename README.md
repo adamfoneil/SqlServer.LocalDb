@@ -1,4 +1,4 @@
-This is a small library of static methods to help you write integration tests for SQL Server. It creates databases dynamically on your localdb instance. You can also initialize databases with seed objects and data via SQL statements or any arbitrary initialization.
+This is a small library of static methods to help you write integration tests for SQL Server. It creates databases dynamically on your localdb instance, and alleviates any need to maintain a connection string and related config. You can also initialize databases with seed objects and data via SQL statements or any arbitrary initialization.
 
 To use, install nuget package **SqlServer.LocalDb.Testing**
 
