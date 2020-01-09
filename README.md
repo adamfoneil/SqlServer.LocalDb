@@ -4,7 +4,7 @@ To use, install nuget package **SqlServer.LocalDb.Testing**
 
 Then, in your integration tests that require a LocalDb connection, you can write code like this:
 
-```
+```csharp
 using (var cn = LocalDb.GetConnection("sample"))
 {
   // whatever testing you need to do
