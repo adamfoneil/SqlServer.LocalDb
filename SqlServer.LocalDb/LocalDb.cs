@@ -1,9 +1,8 @@
-﻿using SqlServer.LocalDb.Exceptions;
+﻿using Microsoft.Data.SqlClient;
+using SqlServer.LocalDb.Exceptions;
 using SqlServer.LocalDb.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Threading;
 
 namespace SqlServer.LocalDb

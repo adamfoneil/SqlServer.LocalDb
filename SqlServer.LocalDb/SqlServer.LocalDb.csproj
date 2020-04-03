@@ -13,21 +13,21 @@
     <PackageProjectUrl>https://github.com/adamosoftware/SqlServer.LocalDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
     <AssemblyVersion>1.0.8.0</AssemblyVersion>
     <FileVersion>1.0.8.0</FileVersion>
-    <PackageReleaseNotes>Made ExecuteInitializeStatements public</PackageReleaseNotes>
+    <PackageReleaseNotes>implemented Microsoft.Data.SqlClient</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
   </ItemGroup>
 
 </Project>
