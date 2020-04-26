@@ -1,3 +1,5 @@
+[![Nuget](https://img.shields.io/nuget/v/SqlServer.LocalDb.Testing)](https://www.nuget.org/packages/SqlServer.LocalDb.Testing/)
+
 This is a small library of static methods to help you write integration tests for SQL Server. It creates databases dynamically on your localdb instance, and frees you from maintaining a connection string and related config overhead. You can also initialize databases with seed objects and data via SQL statements or any arbitrary initialization.
 
 To use, install nuget package **SqlServer.LocalDb.Testing**
