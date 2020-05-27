@@ -28,19 +28,20 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 ## Reference
 All of these are static methods of the `LocalDb` object:
 
-[string GetConnectionString(string databaseName)](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L13)
-
-[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L18)`(string databaseName, IEnumerable<InitializeStatement> initializeStatements)` See also [InitializeStatement](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/Models/InitializeStatement.cs)
-
-[SqlConnection GetConnection](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L53)`(string databaseName, Action<SqlConnection> initialize = null)`
-
-[bool TryDropDatabase](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L94)`(string databaseName, out string message)`
-
-[bool ObjectExists](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L143)`(SqlConnection connection, string objectName)`
-
-[void ExecuteInitializeStatements](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L26)`(SqlConnection cn, IEnumerable<InitializeStatement> statements)`
-
-[void ExecuteIfExists](https://github.com/adamosoftware/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L159)`(SqlConnection connection, string objectName, string execute)`
+- string [GetConnectionString](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L12)
+ (string databaseName)
+- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L17)
+ (string databaseName, IEnumerable<InitializeStatement> initializeStatements)
+- void [ExecuteInitializeStatements](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L25)
+ (SqlConnection cn, IEnumerable<InitializeStatement> statements)
+- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L52)
+ (string databaseName, [ Action<SqlConnection> initialize ])
+- bool [TryDropDatabase](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L93)
+ (string databaseName, string message)
+- bool [ObjectExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L142)
+ (SqlConnection connection, string objectName)
+- void [ExecuteIfExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L158)
+ (SqlConnection connection, string objectName, string execute)
 
 ## Hi there
 If by a crazy turn of events, you find this useful, please consider [buying me a coffee](https://paypal.me/adamosoftware).
