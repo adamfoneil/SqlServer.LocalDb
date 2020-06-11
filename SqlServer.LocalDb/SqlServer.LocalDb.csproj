@@ -13,10 +13,10 @@
     <PackageProjectUrl>https://github.com/adamosoftware/SqlServer.LocalDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <AssemblyVersion>1.0.8.0</AssemblyVersion>
     <FileVersion>1.0.8.0</FileVersion>
-    <PackageReleaseNotes>implemented Microsoft.Data.SqlClient</PackageReleaseNotes>
+    <PackageReleaseNotes>added LocalDb.CreateFromResourceAsync method</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AO.SqlServer.DataTransfer" Version="1.0.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
   </ItemGroup>
 
