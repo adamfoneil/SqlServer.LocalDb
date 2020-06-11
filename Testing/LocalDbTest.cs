@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlServer.LocalDb;
 using SqlServer.LocalDb.Models;
+using System.Reflection;
 
 namespace Testing
 {
@@ -41,6 +42,12 @@ namespace Testing
             }
 
             LocalDb.TryDropDatabase("hello", out _);
+        }
+
+        [TestMethod]
+        public void CreateFromResource()
+        {            
+            LocalDb.CreateFromResourceAsync(Assembly.GetExecutingAssembly(), "Testing.Resources.BlazorServerDemo.zip", "BlazorServerDemo1").Wait();
         }
     }
 }
