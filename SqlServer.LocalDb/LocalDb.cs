@@ -99,10 +99,10 @@ namespace SqlServer.LocalDb
             {
                 using (var cn = new SqlConnection(GetConnectionString("master")))
                 {
-                    cn.Open();                    
-                    Execute(cn, $"DROP DATABASE [{databaseName}]");                    
+                    cn.Open();
+                    DropDatabaseInner(cn, databaseName);
                     message = null;
-                    return true;                    
+                    return true;
                 }
             }
             catch (Exception exc)
@@ -110,6 +110,30 @@ namespace SqlServer.LocalDb
                 message = exc.Message;
                 return false;
             }
+        }
+
+        private static void DropDatabaseInner(SqlConnection cn, string databaseName)
+        {
+            // help from https://isaacmcn.wordpress.com/2013/04/17/force-drop-entity-framework-sql-localdb/
+
+            Execute(cn, 
+                $@"USE MASTER;
+                ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                DROP DATABASE [{databaseName}];");
+        }
+
+        public static bool TryDropDatabaseIfExists(string databaseName, out string message)
+        {
+            using (var cn = GetConnection("master"))
+            {
+                if (DatabaseExists(cn, databaseName))
+                {
+                    return TryDropDatabase(databaseName, out message);
+                }
+
+                message = null;
+                return true;
+            }            
         }
 
         private static bool TryCreateDbIfNotExists(string databaseName)

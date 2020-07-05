@@ -10,13 +10,13 @@
     <PackageId>SqlServer.LocalDb.Testing</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>A small library to help you write integration tests for SQL Server using LocalDb</Description>
-    <PackageProjectUrl>https://github.com/adamosoftware/SqlServer.LocalDb</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/adamosoftware/SqlServer.LocalDb</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/adamfoneil/SqlServer.LocalDb</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adamfoneil/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
-    <Version>1.0.11</Version>
+    <Version>1.0.12</Version>
     <AssemblyVersion>1.0.8.0</AssemblyVersion>
     <FileVersion>1.0.8.0</FileVersion>
-    <PackageReleaseNotes>added LocalDb.CreateFromResourceAsync method</PackageReleaseNotes>
+    <PackageReleaseNotes>added LocalDb.TryDropDatabaseIfExists method</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

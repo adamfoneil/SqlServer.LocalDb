@@ -22,6 +22,28 @@ namespace Testing
         }
 
         [TestMethod]
+        public void TryDropDbIfExists()
+        {
+            bool droppedNotExisting = false;
+            bool droppedExisting = false;
+
+            // db doesn't exist
+            if (LocalDb.TryDropDatabaseIfExists("hello1", out string message))
+            {
+                droppedNotExisting = true;
+            }
+
+            using (var cn = LocalDb.GetConnection("hello")) { }
+
+            if (LocalDb.TryDropDatabaseIfExists("hello", out message))
+            {
+                droppedExisting = true;
+            }
+
+            Assert.IsTrue(droppedNotExisting && droppedExisting);
+        }
+
+        [TestMethod]
         public void TryLocalConnectionCreateSampleTable()
         {
             LocalDb.TryDropDatabase("hello", out _);
