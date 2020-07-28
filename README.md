@@ -25,23 +25,25 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 - [Yet another test class initialize, with random data](https://github.com/adamosoftware/Dapper.QX/blob/master/Testing/ExecutionSqlServer.cs#L25), using my [Test Data Generation](https://github.com/adamosoftware/TestDataGen) library.
 - Side note: Random data persistence is handled by my [BulkInsert](https://github.com/adamosoftware/SqlIntegration/blob/master/SqlIntegration.Library/BulkInsert.cs) helper from my [SqlIntegration](https://github.com/adamosoftware/SqlIntegration) project.
 
-## Reference
-All of these are static methods of the `LocalDb` object:
-
-- string [GetConnectionString](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L12)
+## Reference [LocalDb.cs](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L13)
+- string [GetConnectionString](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L15)
  (string databaseName)
-- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L17)
+- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L20)
  (string databaseName, IEnumerable<InitializeStatement> initializeStatements)
-- void [ExecuteInitializeStatements](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L25)
+- void [ExecuteInitializeStatements](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L28)
  (SqlConnection cn, IEnumerable<InitializeStatement> statements)
-- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L52)
+- SqlConnection [GetConnection](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L55)
  (string databaseName, [ Action<SqlConnection> initialize ])
-- bool [TryDropDatabase](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L93)
+- bool [TryDropDatabase](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L96)
  (string databaseName, string message)
-- bool [ObjectExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L142)
+- bool [TryDropDatabaseIfExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L125)
+ (string databaseName, string message)
+- bool [ObjectExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L169)
  (SqlConnection connection, string objectName)
-- void [ExecuteIfExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L158)
+- void [ExecuteIfExists](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L185)
  (SqlConnection connection, string objectName, string execute)
+- Task [CreateFromResourceAsync](https://github.com/adamfoneil/SqlServer.LocalDb/blob/master/SqlServer.LocalDb/LocalDb.cs#L193)
+ (Assembly assembly, string resourceName, string databaseName)
 
 ## Hi there
 If by a crazy turn of events, you find this useful, please consider [buying me a coffee](https://paypal.me/adamosoftware).
