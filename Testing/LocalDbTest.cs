@@ -65,11 +65,5 @@ namespace Testing
 
             LocalDb.TryDropDatabase("hello", out _);
         }
-
-        [TestMethod]
-        public void CreateFromResource()
-        {            
-            LocalDb.CreateFromResourceAsync(Assembly.GetExecutingAssembly(), "Testing.Resources.BlazorServerDemo.zip", "BlazorServerDemo1").Wait();
-        }
     }
 }

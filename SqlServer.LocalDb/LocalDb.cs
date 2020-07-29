@@ -1,12 +1,9 @@
-﻿using AO.SqlServer;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using SqlServer.LocalDb.Exceptions;
 using SqlServer.LocalDb.Models;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SqlServer.LocalDb
 {
@@ -187,19 +184,6 @@ namespace SqlServer.LocalDb
             if (ObjectExists(connection, objectName))
             {
                 Execute(connection, execute);
-            }
-        }
-
-        public static async Task CreateFromResourceAsync(Assembly assembly, string resourceName, string databaseName)
-        {
-            var dt = new DataTransfer();
-
-            using (var cn = GetConnection(databaseName))
-            {
-                using (var stream = assembly.GetManifestResourceStream(resourceName))
-                {
-                    await dt.ImportAsync(cn, stream);
-                }                
             }
         }
     }
