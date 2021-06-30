@@ -21,7 +21,7 @@ I looked around and saw a couple other libraries doing exactly what I set out to
 ## Examples
 - [Create database with sample model](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L44), sample model is [here](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L177), and random data creation is [here](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L127)
 - [Drop sample db on test class startup](https://github.com/adamosoftware/SqlIntegration/blob/master/Testing/SqlMigratorTest.cs#L28)
-- [Another test class initialize example](https://github.com/adamosoftware/Dapper.CX/blob/master/Tests/SqlServer/SqlServerIntegration.cs#L17)
+- [Another test class initialize example](https://github.com/adamfoneil/Dapper.CX/blob/master/Tests.SqlServer/SqlServer/SqlServerIntegration.cs#L19)
 - [Yet another test class initialize, with random data](https://github.com/adamosoftware/Dapper.QX/blob/master/Testing/ExecutionSqlServer.cs#L25), using my [Test Data Generation](https://github.com/adamosoftware/TestDataGen) library.
 - Side note: Random data persistence is handled by my [BulkInsert](https://github.com/adamosoftware/SqlIntegration/blob/master/SqlIntegration.Library/BulkInsert.cs) helper from my [SqlIntegration](https://github.com/adamosoftware/SqlIntegration) project.
 
