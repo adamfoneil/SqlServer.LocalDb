@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlServer.LocalDb;
+using SqlServer.LocalDb.Extensions;
 using SqlServer.LocalDb.Models;
-using System.Reflection;
 
 namespace Testing
 {
@@ -49,7 +49,7 @@ namespace Testing
             LocalDb.TryDropDatabase("hello", out _);
 
             using (var cn = LocalDb.GetConnection("hello", new InitializeStatement[]
-            {
+            {                
                 new InitializeStatement("dbo.Table1", 
                 "DROP TABLE %obj%",
                 @"CREATE TABLE %obj% (
@@ -57,10 +57,20 @@ namespace Testing
                     [Field2] nvarchar(50) NOT NULL,
                     [Field3] datetime NULL,
                     [Id] int identity(1,1) PRIMARY KEY
+                )"),
+                new InitializeStatement("dbo.Table2", 
+                "DROP TABLE %obj%",
+                @"CREATE TABLE %obj% (                    
+                    [Table1Id] int NOT NULL,
+                    [Field1] nvarchar(50) NOT NULL,
+                    [Id] int identity(1,1) PRIMARY KEY,
+                    CONSTRAINT [FK_Table2_Table1] FOREIGN KEY ([Table1Id]) REFERENCES [dbo].[Table1] ([Id])
                 )")
             }))
             {
                 Assert.IsTrue(LocalDb.ObjectExists(cn, "dbo.Table1"));
+                Assert.IsTrue(LocalDb.ObjectExists(cn, "dbo.Table2"));
+                cn.DropAllTablesAsync().Wait();                
             }
 
             LocalDb.TryDropDatabase("hello", out _);

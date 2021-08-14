@@ -13,11 +13,10 @@
     <PackageProjectUrl>https://github.com/adamfoneil/SqlServer.LocalDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adamfoneil/SqlServer.LocalDb</RepositoryUrl>
     <PackageTags>sqlserver localdb</PackageTags>
-    <Version>1.0.13</Version>
-    <AssemblyVersion>1.0.8.0</AssemblyVersion>
-    <FileVersion>1.0.8.0</FileVersion>
-    <PackageReleaseNotes>removed SMO dependency (breaking change)
-https://github.com/adamfoneil/SqlServer.LocalDb/issues/6</PackageReleaseNotes>
+    <Version>1.0.14</Version>
+    <AssemblyVersion>1.0.14.0</AssemblyVersion>
+    <FileVersion>1.0.14.0</FileVersion>
+    <PackageReleaseNotes>added SqlConnection extenstion method DropAllTablesAsync</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +27,7 @@ https://github.com/adamfoneil/SqlServer.LocalDb/issues/6</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
   </ItemGroup>
 
